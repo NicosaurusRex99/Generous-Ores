@@ -1,0 +1,16 @@
+[
+{
+  "modid": "generousores",
+  "name": "Generous Ores",
+  "description": "This mod adds configurability to ore veins",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["NicosaurusRex99"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

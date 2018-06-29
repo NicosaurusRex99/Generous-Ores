@@ -59,10 +59,6 @@ repositories {
         ivyPattern "https://maven.tterrag.com/[module]-[revision].[ext]"
         artifactPattern "http://media.forgecdn.net/files/${pe_cf}/[module]-[revision].[ext]"
     }
-	maven {
-		name = "ic2-and-forestry"
-		url = "http://maven.ic2.player.to/"
-	}
 }
 
 dependencies {   
@@ -77,7 +73,6 @@ dependencies {
 	compile "codechicken:CodeChickenLib:${minecraft_version}-3.1.6.339:deobf"
     compile "cofh:RedstoneFlux:1.12-2.0.0.1:deobf"
 	compile "com.mod-buildcraft:buildcraft-libexpression:0.9.1"
-	compile 'net.sengir.forestry:forestry_1.12.2:5.8.0.311:dev'
 	
   runtime "mezz.jei:jei_${mc_version}:${jei_version}"
 	

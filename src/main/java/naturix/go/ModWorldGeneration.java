@@ -5,7 +5,6 @@ import java.util.Random;
 
 import com.google.common.base.Predicate;
 
-import appeng.api.definitions.IBlocks;
 import cofh.thermalfoundation.block.BlockOre;
 import cofh.thermalfoundation.init.TFBlocks;
 import mekanism.common.MekanismBlocks;

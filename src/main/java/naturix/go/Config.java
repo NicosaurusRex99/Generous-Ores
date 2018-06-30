@@ -71,11 +71,19 @@ public class Config {
     public static int osmiumMin;
     public static int osmiumSpawnTries;
     public static int osmiumVein;
-    
-    
-    
-    
-    
+    public static int iridiumMax;
+    public static int iridiumMin;
+    public static int iridiumSpawnTries;
+    public static int iridiumVein;
+    public static int mithrilMax;
+    public static int mithrilMin;
+    public static int mithrilSpawnTries;
+    public static int mithrilVein;
+    public static int platinumMax;
+    public static int platinumMin;
+    public static int platinumSpawnTries;
+    public static int platinumVein;
+       
     
   
     public static void readConfig() {
@@ -109,7 +117,7 @@ public class Config {
         coalMax = cfg.getInt("coalMax", CATEGORY_MAX, 131, 1, 255, "Choose a number between 1 and 255 to choose the max ore height");
         coalMin = cfg.getInt("coalMin", CATEGORY_MIN, 1, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
         coalSpawnTries = cfg.getInt("coalTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
-        coalVein = cfg.getInt("coalVein", CATEGORY_VEIN, 50, 1, 255, "Choose a number between 1 and 255 to set the vein size");
+        coalVein = cfg.getInt("coalVein", CATEGORY_VEIN, 25, 1, 255, "Choose a number between 1 and 255 to set the vein size");
         lapisMax = cfg.getInt("lapisMax", CATEGORY_MAX, 33, 1, 255, "Choose a number between 1 and 255 to choose the max ore height");
         lapisMin = cfg.getInt("lapisMin", CATEGORY_MIN, 1, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
         lapisSpawnTries = cfg.getInt("lapisTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
@@ -130,7 +138,7 @@ public class Config {
         copperMax = cfg.getInt("copperMax", CATEGORY_MAX, 94, 1, 255, "Choose a number between 1 and 255 to choose the max ore height");
         copperMin = cfg.getInt("copperMin", CATEGORY_MIN, 17, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
         copperSpawnTries = cfg.getInt("copperTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
-        copperVein = cfg.getInt("copperVein", CATEGORY_VEIN, 30, 1, 255, "Choose a number between 1 and 255 to set the vein size");
+        copperVein = cfg.getInt("copperVein", CATEGORY_VEIN, 20, 1, 255, "Choose a number between 1 and 255 to set the vein size");
         tinMax = cfg.getInt("tinMax", CATEGORY_MAX, 54, 1, 255, "Choose a number between 1 and 255 to choose the max ore height");
         tinMin = cfg.getInt("tinMin", CATEGORY_MIN, 17, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
         tinSpawnTries = cfg.getInt("tinTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
@@ -155,6 +163,18 @@ public class Config {
         osmiumMin = cfg.getInt("osmiumMin", CATEGORY_MIN, 1, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
         osmiumSpawnTries = cfg.getInt("osmiumTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
         osmiumVein = cfg.getInt("osmiumVein", CATEGORY_VEIN, 20, 1, 255, "Choose a number between 1 and 255 to set the vein size");
+        iridiumMax = cfg.getInt("iridiumMax", CATEGORY_MAX, 15, 1, 255, "Choose a number between 1 and 255 to choose the max ore height");
+        iridiumMin = cfg.getInt("iridiumMin", CATEGORY_MIN, 1, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
+        iridiumSpawnTries = cfg.getInt("iridiumTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
+        iridiumVein = cfg.getInt("iridiumVein", CATEGORY_VEIN, 5, 1, 255, "Choose a number between 1 and 255 to set the vein size");
+        mithrilMax = cfg.getInt("mithrilMax", CATEGORY_MAX, 15, 1, 255, "Choose a number between 1 and 255 to choose the max ore height");
+        mithrilMin = cfg.getInt("mithrilMin", CATEGORY_MIN, 1, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
+        mithrilSpawnTries = cfg.getInt("mithrilTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
+        mithrilVein = cfg.getInt("mithrilVein", CATEGORY_VEIN, 5, 1, 255, "Choose a number between 1 and 255 to set the vein size");
+        platinumMax = cfg.getInt("platinumMax", CATEGORY_MAX, 8, 1, 255, "Choose a number between 1 and 255 to choose the max ore height");
+        platinumMin = cfg.getInt("platinumMin", CATEGORY_MIN, 1, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
+        platinumSpawnTries = cfg.getInt("platinumTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
+        platinumVein = cfg.getInt("platinumVein", CATEGORY_VEIN, 8, 1, 255, "Choose a number between 1 and 255 to set the vein size");
         
         }
 

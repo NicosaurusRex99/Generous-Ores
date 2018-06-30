@@ -1,28 +1,25 @@
 package naturix.go;
 
+import java.util.Optional;
 import java.util.Random;
 
 import com.google.common.base.Predicate;
 
+import appeng.api.definitions.IBlocks;
+import cofh.thermalfoundation.block.BlockOre;
 import cofh.thermalfoundation.init.TFBlocks;
 import mekanism.common.MekanismBlocks;
-import micdoodle8.mods.galacticraft.core.GCBlocks;
-import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraftforge.fml.common.IWorldGenerator;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
+import net.minecraftforge.fml.common.Loader;
 
 
 public class ModWorldGeneration implements IWorldGenerator {
@@ -33,7 +30,7 @@ public class ModWorldGeneration implements IWorldGenerator {
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         switch (world.provider.getDimension()){
             case -1:
-                genNether(world, random, chunkX, chunkZ);
+                //genNether(world, random, chunkX, chunkZ);
                 break;
             case 0:
                 genSurface(world, random, chunkX, chunkZ);
@@ -58,13 +55,14 @@ public class ModWorldGeneration implements IWorldGenerator {
 				int b = blockXPos * 16 + random.nextInt(16);
 				int y = minY + random.nextInt(heighDiff);
 				int z = blockZPos * 16 + random.nextInt(16);
-				
+				GO.logger.info(block.getBlock().getLocalizedName());
 				gen.generate(world, random, new BlockPos(b, y, z));
 			}
 		
 		  }
 		  }
-	 private void genSurface(World world, Random random, int chunkX, int chunkZ){
+	 @SuppressWarnings("null")
+	private void genSurface(World world, Random random, int chunkX, int chunkZ){
 		 addOreSpawn(Blocks.IRON_ORE.getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.ironVein, Config.ironSpawnTries, Config.ironMin, Config.ironMax, BlockMatcher.forBlock(Blocks.STONE));
 		 addOreSpawn(Blocks.COAL_ORE.getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.coalVein, Config.coalSpawnTries, Config.coalMin, Config.coalMax, BlockMatcher.forBlock(Blocks.STONE));
 		 addOreSpawn(Blocks.GOLD_ORE.getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.goldVein, Config.goldSpawnTries, Config.goldMin, Config.goldMax, BlockMatcher.forBlock(Blocks.STONE));
@@ -94,10 +92,28 @@ public class ModWorldGeneration implements IWorldGenerator {
 			 addOreSpawn(MekanismBlocks.OreBlock.getStateFromMeta(2), world, random, chunkX, chunkZ, 16, 16, Config.tinVein, Config.tinSpawnTries, Config.tinMin, Config.tinMax, BlockMatcher.forBlock(Blocks.STONE));
 			  
 		 }
-		 
+		 if(Loader.isModLoaded("ic2")) {
+			 IBlockState ic2Tin = Block.getBlockFromItem(BlockOre.oreTin.getItem()).getStateFromMeta(BlockOre.oreTin.getMetadata());
+			 IBlockState ic2Copper = Block.getBlockFromItem(BlockOre.oreCopper.getItem()).getStateFromMeta(BlockOre.oreCopper.getMetadata());
+			 IBlockState ic2Aluminum = Block.getBlockFromItem(BlockOre.oreAluminum.getItem()).getStateFromMeta(BlockOre.oreAluminum.getMetadata());
+			 IBlockState ic2Iridium = Block.getBlockFromItem(BlockOre.oreIridium.getItem()).getStateFromMeta(BlockOre.oreIridium.getMetadata());
+			 IBlockState ic2Lead = Block.getBlockFromItem(BlockOre.oreLead.getItem()).getStateFromMeta(BlockOre.oreLead.getMetadata());
+			 IBlockState ic2Mithril = Block.getBlockFromItem(BlockOre.oreMithril.getItem()).getStateFromMeta(BlockOre.oreMithril.getMetadata());
+			 IBlockState ic2Nickel = Block.getBlockFromItem(BlockOre.oreNickel.getItem()).getStateFromMeta(BlockOre.oreNickel.getMetadata());
+			 IBlockState ic2Platinum = Block.getBlockFromItem(BlockOre.orePlatinum.getItem()).getStateFromMeta(BlockOre.orePlatinum.getMetadata());
+			 IBlockState ic2Silver = Block.getBlockFromItem(BlockOre.oreSilver.getItem()).getStateFromMeta(BlockOre.oreSilver.getMetadata());
+			 
+			 addOreSpawn(ic2Tin, world, random, chunkX, chunkZ, 16, 16, Config.tinVein, Config.tinSpawnTries, Config.tinMin, Config.tinMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 addOreSpawn(ic2Copper, world, random, chunkX, chunkZ, 16, 16, Config.copperVein, Config.copperSpawnTries, Config.copperMin, Config.copperMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 addOreSpawn(ic2Aluminum, world, random, chunkX, chunkZ, 16, 16, Config.aluminumVein, Config.aluminumSpawnTries, Config.aluminumMin, Config.aluminumMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 addOreSpawn(ic2Iridium, world, random, chunkX, chunkZ, 16, 16, Config.iridiumVein, Config.iridiumSpawnTries, Config.iridiumMin, Config.iridiumMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 addOreSpawn(ic2Lead, world, random, chunkX, chunkZ, 16, 16, Config.leadVein, Config.leadSpawnTries, Config.leadMin, Config.leadMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 addOreSpawn(ic2Mithril, world, random, chunkX, chunkZ, 16, 16, Config.mithrilVein, Config.mithrilSpawnTries, Config.mithrilMin, Config.mithrilMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 addOreSpawn(ic2Nickel, world, random, chunkX, chunkZ, 16, 16, Config.nickelVein, Config.nickelSpawnTries, Config.nickelMin, Config.nickelMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 addOreSpawn(ic2Platinum, world, random, chunkX, chunkZ, 16, 16, Config.platinumVein, Config.platinumSpawnTries, Config.platinumMin, Config.platinumMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 addOreSpawn(ic2Silver, world, random, chunkX, chunkZ, 16, 16, Config.silverVein, Config.silverSpawnTries, Config.silverMin, Config.silverMax, BlockMatcher.forBlock(Blocks.STONE)); 
+			 }
+		
 	 }
-	 private void genNether(World world, Random random, int chunkX, int chunkZ){
-		 //addOreSpawn(Blocks.QUARTZ_ORE.getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.quartzVein, Config.quartzSpawnTries, 180, 1, BlockMatcher.forBlock(Blocks.NETHERRACK));
-	 }
-	 
+	 	 
 }

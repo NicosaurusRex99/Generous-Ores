@@ -71,6 +71,10 @@ public class Config {
     public static int osmiumMin;
     public static int osmiumSpawnTries;
     public static int osmiumVein;
+    public static int urainumMax;
+    public static int uraniumMin;
+    public static int uraniumSpawnTries;
+    public static int uraniumVein;
     
     
     
@@ -155,6 +159,10 @@ public class Config {
         osmiumMin = cfg.getInt("osmiumMin", CATEGORY_MIN, 1, 1, 255, "Choose a number between 1 and 255 to choose the min ore height");
         osmiumSpawnTries = cfg.getInt("osmiumTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore");
         osmiumVein = cfg.getInt("osmiumVein", CATEGORY_VEIN, 20, 1, 255, "Choose a number between 1 and 255 to set the vein size");
+        urainumMax = cfg.getInt("urainumMax", CATEGORY_MAX, 30, 1, 255, "Choose a number between 1 and 255 to choose the max ore height (this includes yellorite) (this includes yellorite)");
+        uraniumMin = cfg.getInt("uraniumMin", CATEGORY_MIN, 1, 1, 255, "Choose a number between 1 and 255 to choose the min ore height (this includes yellorite)");
+        uraniumSpawnTries = cfg.getInt("uraniumTries", CATEGORY_TRIES, 1, 1, 255, "Choose a number between 1 and 255 to set how many attempts the game has to spawn this ore (this includes yellorite)");
+        uraniumVein = cfg.getInt("uraniumVein", CATEGORY_VEIN, 20, 1, 255, "Choose a number between 1 and 255 to set the vein size (this includes yellorite)");
         
         }
 

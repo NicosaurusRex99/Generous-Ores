@@ -5,24 +5,21 @@ import java.util.Random;
 import com.google.common.base.Predicate;
 
 import cofh.thermalfoundation.init.TFBlocks;
+import erogenousbeef.bigreactors.init.BrBlocks;
+import ic2.core.Ic2WorldDecorator;
+import ic2.core.block.type.ResourceBlock;
 import mekanism.common.MekanismBlocks;
-import micdoodle8.mods.galacticraft.core.GCBlocks;
-import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraftforge.fml.common.IWorldGenerator;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
+import net.minecraftforge.fml.common.Loader;
 
 
 public class ModWorldGeneration implements IWorldGenerator {
@@ -91,8 +88,17 @@ public class ModWorldGeneration implements IWorldGenerator {
 		 if(Loader.isModLoaded("mekanism")) {
 			 addOreSpawn(MekanismBlocks.OreBlock.getStateFromMeta(0), world, random, chunkX, chunkZ, 16, 16, Config.osmiumVein, Config.osmiumSpawnTries, Config.osmiumMin, Config.osmiumMax, BlockMatcher.forBlock(Blocks.STONE));
 			 addOreSpawn(MekanismBlocks.OreBlock.getStateFromMeta(1), world, random, chunkX, chunkZ, 16, 16, Config.copperVein, Config.copperSpawnTries, Config.copperMin, Config.copperMax, BlockMatcher.forBlock(Blocks.STONE));
-			 addOreSpawn(MekanismBlocks.OreBlock.getStateFromMeta(2), world, random, chunkX, chunkZ, 16, 16, Config.tinVein, Config.tinSpawnTries, Config.tinMin, Config.tinMax, BlockMatcher.forBlock(Blocks.STONE));
-			  
+			 addOreSpawn(MekanismBlocks.OreBlock.getStateFromMeta(2), world, random, chunkX, chunkZ, 16, 16, Config.tinVein, Config.tinSpawnTries, Config.tinMin, Config.tinMax, BlockMatcher.forBlock(Blocks.STONE));  
+		 }
+		 if(Loader.isModLoaded("bigreactors")) {
+			 addOreSpawn(BrBlocks.brOre.getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.uraniumVein, Config.uraniumSpawnTries, Config.uraniumMin, Config.urainumMax, BlockMatcher.forBlock(Blocks.STONE));
+			}
+		 if(Loader.isModLoaded("ic2")) {
+			 addOreSpawn(Block.getBlockById(ResourceBlock.tin_ore.getId()).getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.tinVein, Config.tinSpawnTries, Config.tinMin, Config.tinMax, BlockMatcher.forBlock(Blocks.STONE));
+			 addOreSpawn(Block.getBlockById(ResourceBlock.copper_ore.getId()).getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.copperVein, Config.copperSpawnTries, Config.copperMin, Config.copperMax, BlockMatcher.forBlock(Blocks.STONE));
+			 addOreSpawn(Block.getBlockById(ResourceBlock.lead_ore.getId()).getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.leadVein, Config.leadSpawnTries, Config.leadMin, Config.leadMax, BlockMatcher.forBlock(Blocks.STONE));
+			 addOreSpawn(Block.getBlockById(ResourceBlock.uranium_ore.getId()).getDefaultState(), world, random, chunkX, chunkZ, 16, 16, Config.uraniumVein, Config.uraniumSpawnTries, Config.uraniumMin, Config.urainumMax, BlockMatcher.forBlock(Blocks.STONE));
+						
 		 }
 		 
 	 }

@@ -20,7 +20,7 @@ public class GO
 {
     public static final String MODID = "generousores";
     public static final String NAME = "Generous Ores";
-    public static final String VERSION = "1.12.2.0";
+    public static final String VERSION = "1.12.2.1";
     public static final String UPDATE_URL = "https://raw.githubusercontent.com/NicosaurusRex99/Generous-Ores/master/go_update.json";
     
     public static Logger logger;

@@ -1,10 +1,11 @@
 {
 	"homepage": "https://minecraft.curseforge.com/projects/generous-ores",
 	"1.12.2": {
+		"1.12.2.1": "added ic2 and extreme reactors support",
 		"1.12.2.0": "created mod"
 	},
 	"promos": {
-		"1.12.2-latest": "1.12.2.0",
-		"1.12.2-recommended": "1.12.2.0"
+		"1.12.2-latest": "1.12.2.1",
+		"1.12.2-recommended": "1.12.2.1"
 	}
 }
